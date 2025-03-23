@@ -31,7 +31,7 @@ class ChatViewModel: ObservableObject {
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveMessage(_:)), name: .didReceiveMessage, object: nil)
     }
 
-    @objc private func didReceive(_ notification: Notification) {
+    @objc func didReceive(_ notification: Notification) {
         if let event = notification.userInfo?["event"] as? Starscream.WebSocketEvent {
             switch event {
             case .text(let message):
@@ -44,7 +44,7 @@ class ChatViewModel: ObservableObject {
         }
     }
 
-    @objc private func didReceiveMessage(_ notification: Notification) {
+    @objc func didReceiveMessage(_ notification: Notification) {
         if let messageText = notification.userInfo?["message"] as? String {
             let message = ChatMessage(text: messageText, isSend: false)
             messages.append(message)

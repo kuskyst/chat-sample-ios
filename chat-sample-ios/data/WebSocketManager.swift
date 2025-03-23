@@ -9,7 +9,7 @@ import Foundation
 import Starscream
 
 class WebSocketManager: ObservableObject {
-    private var socket: WebSocket?
+    var socket: WebSocket?
 
     init() {
         setupWebSocket()
