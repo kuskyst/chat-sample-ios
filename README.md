@@ -1,5 +1,5 @@
 # chat-sample-ios
-チャットアプリのサンプル
+チャットアプリのサンプル<br>
 ws://localhost:8080/ws へ通信する
 
 | # | |
@@ -12,4 +12,4 @@ ws://localhost:8080/ws へ通信する
 | Test | XCTest |
 
 # Image
-<img width=200 src="https://github.com/user-attachments/assets/5caf2b8e-e726-47a6-bbb9-cea5d61dc56d">
+<img width=200 src="https://github.com/user-attachments/assets/74a56ac5-66de-4374-b2c6-1c8097f17109">
