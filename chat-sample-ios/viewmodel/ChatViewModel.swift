@@ -35,8 +35,8 @@ class ChatViewModel: ObservableObject {
         if let event = notification.userInfo?["event"] as? Starscream.WebSocketEvent {
             switch event {
             case .text(let message):
-                if (messages.last?.text != message) {
-                    let chat = ChatMessage(text: message, isSend: false)
+                if (messages.last?.text != message.replacing("\"", with: "")) {
+                    let chat = ChatMessage(text: message.replacing("\"", with: ""), isSend: false)
                     messages.append(chat)
                 }
             default: break
@@ -46,7 +46,7 @@ class ChatViewModel: ObservableObject {
 
     @objc func didReceiveMessage(_ notification: Notification) {
         if let messageText = notification.userInfo?["message"] as? String {
-            let message = ChatMessage(text: messageText, isSend: false)
+            let message = ChatMessage(text: messageText.replacing("\"", with: ""), isSend: false)
             messages.append(message)
         }
     }
